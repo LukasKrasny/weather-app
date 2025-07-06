@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import CitySearch from './components/CitySearch';
+import CitySearch from './components/CitySearch/CitySearch';
 import type { City } from './types/City';
-import WeatherCard from './components/WeatherCard'; 
+import WeatherCard from './components/WeatherCard/WeatherCard';
 
 function App() {
   const [cities, setCities] = useState<City[]>([]);
@@ -33,7 +33,7 @@ function App() {
         {selectedCity && (
           <section aria-label="Vybrané město">
             <p>Vybrané město: {selectedCity.name} ({selectedCity.country})</p>
-          <WeatherCard city={selectedCity} /> 
+            <WeatherCard city={selectedCity} />
           </section>
         )}
 

@@ -1,0 +1,28 @@
+@use '@/styles/variables';
+
+.weather-card {
+  background-color: variables.$color-white;
+  border: 1px solid variables.$color-border;
+  border-radius: variables.$radius;
+  padding: variables.$spacing;
+  box-shadow: variables.$shadow;
+  max-width: 320px;
+  margin-bottom: variables.$spacing;
+
+  h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .temperature {
+    font-size: 2rem;
+    font-weight: bold;
+    color: variables.$color-primary;
+  }
+
+  .error {
+    color: red;
+    margin-top: 0.5rem;
+    font-weight: bold;
+  }
+}

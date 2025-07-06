@@ -1,0 +1,44 @@
+.city-search {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 0.5rem;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+
+    li {
+      padding: 0.75rem 1rem;
+      margin-bottom: 0.25rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.15s ease;
+
+      &:hover {
+        background-color: #f0f4ff;
+        transform: translateX(4px);
+      }
+    }
+  }
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  transition: border-color 0.2s ease;
+
+  &:focus {
+    border-color: #0044cc; // Změna barvy rámečku při zaměření
+    outline: none; // Odstranění standardního rámečku
+  }     
+}
+
+

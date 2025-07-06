@@ -15,6 +15,7 @@ Klade důraz na:
 - formátování data/času podle jazyka prohlížeče
 - čistý funkcionální přístup bez UI knihoven
 - přehlednou strukturu bez složité konfigurace
+- CSS styly pomocí
 
 ## Spuštění aplikace
 
@@ -29,7 +30,7 @@ npm install
 Zaregistruj se na https://openweathermap.org/, získej bezplatný API klíč a vytvoř v kořenové složce soubor .env:
 ```bash
 VITE_API_KEY=tvuj_api_klic
-VITE_API_BASE_URL=https://api.openweathermap.org/data/2.5
+VITE_API_BASE_URL=https://api.openweathermap.org/data/2.5/forecast
 ```
 
 ### 3. Spuštění vývojového serveru
@@ -49,15 +50,25 @@ Díky použití moderních webových standardů by měla být plně funkční ta
 ⚠️ Safari (desktop) (očekávaná kompatibilita)
 
 ## Struktura projektu
-
+```bash
 src/
-├── components/         # Reuse komponenty (CitySearch, WeatherCard)
+├── components/
+│   ├── CitySearch/
+│   │   ├── CitySearch.tsx
+│   │   └── CitySearch.scss
+│   └── WeatherCard/
+│       ├── WeatherCard.tsx
+│       └── WeatherCard.scss
+├── styles/
+│   ├── _variables.scss
+│   ├── main.scss
 ├── services/           # Volání REST API (fetchForecast)
 ├── types/              # TypeScript typy (City, ForecastResponse)
 ├── utils/              # Pomocné funkce (např. formatDateTime)
 ├── App.tsx             # Hlavní komponenta
 public/
-└── data/city.list.json # Lokální seznam měst z OpenWeatherMap
+└── data/cities.json    # Lokální seznam měst z OpenWeatherMap
+```
 
 ## Moduly a logické celky
 
@@ -71,7 +82,7 @@ public/
 
 - React + TypeScript
 - Vite – moderní buildovací nástroj
-- HTML5 + CSS3 (bez UI knihoven)
+- HTML5 + SASS (pro stylování)
 - REST API – OpenWeatherMap
 - Intl.DateTimeFormat – pro lokalizované formátování času
 

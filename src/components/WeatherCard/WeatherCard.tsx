@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import type { City } from "../types/City";
-import type { ForecastResponse } from "../types/ForecastResponse";
-import { fetchForecast } from "../services/openWeather";
-import { formatDateTime } from "../utils/format";
+import type { City } from "../../types/City";
+import type { ForecastResponse } from "../../types/ForecastResponse";
+import { fetchForecast } from "../../services/openWeather";
+import { formatDateTime } from "../../utils/format";
+import "./WeatherCard.scss"; 
 
 type Props = {
   city: City;
@@ -18,27 +19,22 @@ export default function WeatherCard({ city }: Props) {
     setError(null);
     fetchForecast(city)
       .then((data) => setForecast(data))
-      .catch(() => setError("Nepodařilo se načíst předpověď."))
+      .catch((err) => {
+        console.error("Chyba při načítání předpovědi:", err);
+        setError(err.message);
+      })
       .finally(() => setLoading(false));
   }, [city]);
 
   if (loading) return <p>Načítám předpověď...</p>;
-  if (error) return <p style={{ color: "red" }}>{error}</p>;
+  if (error) return <p className="error">{error}</p>;
   if (!forecast) return null;
 
   const current = forecast.list[0];
 
   return (
     <article
-      aria-label={`Předpověď počasí pro ${forecast.city.name}`}
-      style={{
-        border: "1px solid #ccc",
-        padding: "16px",
-        borderRadius: "8px",
-        marginTop: "16px",
-        maxWidth: "320px",
-      }}
-    >
+      aria-label={`Předpověď počasí pro ${forecast.city.name}`}>
       <header>
         <h2>
           {forecast.city.name}, {forecast.city.country}
