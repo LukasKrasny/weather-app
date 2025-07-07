@@ -4,7 +4,6 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: variables.$font-base;
-  background-color: variables.$color-bg;
   color: variables.$color-gray;
   height: 100%;
 }
@@ -16,8 +15,9 @@ html, body {
 }
 
 header {
+  background: variables.$background-color;
   padding: variables.$spacing;
-  background-color: variables.$color-white;
+  border-bottom: 2px solid variables.$color-border;
   box-shadow: variables.$shadow;
   text-align: center;
 
@@ -28,9 +28,10 @@ header {
 }
 
 main {
+  background: variables.$background-gradient;
   flex: 1;
   width: 100%;
-  max-width: 960px;
+  min-height: 100vh;
   margin: 0 auto;
   padding: variables.$spacing;
   display: flex;
@@ -44,7 +45,7 @@ footer {
   text-align: center;
   font-size: 0.9rem;
   background-color: variables.$color-white;
-  border-top: 1px solid variables.$color-border;
+  border-top: 2px solid variables.$color-border;
   color: variables.$color-gray;
 }
 

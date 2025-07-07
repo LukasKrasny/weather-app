@@ -32,7 +32,6 @@ function App() {
         {/* Výpis vybraného města */}
         {selectedCity && (
           <section aria-label="Vybrané město">
-            <p>Vybrané město: {selectedCity.name} ({selectedCity.country})</p>
             <WeatherCard city={selectedCity} />
           </section>
         )}

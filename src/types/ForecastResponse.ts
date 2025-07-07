@@ -1,17 +1,26 @@
 export type ForecastResponse = {
-  city: {
-    name: string;
-    country: string;
-  };
-  list: {
-    dt: number; 
+  cod: string;
+  message: number;
+  cnt: number;
+  list: Array<{
+    dt: number;
     main: {
       temp: number;
       humidity: number;
     };
-    weather: {
+    weather: Array<{
+      id: number;
+      main: string;
       description: string;
       icon: string;
-    }[];
-  }[];
+    }>;
+    wind: {
+      speed: number;
+    };
+  }>;
+  city: {
+    id: number;
+    name: string;
+    country: string;
+  };
 };

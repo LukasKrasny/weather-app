@@ -1,5 +1,6 @@
 export function formatDateTime(unix: number): string {
-  return new Date(unix * 1000).toLocaleString(undefined, {
+  return new Date(unix * 1000).toLocaleString('cs-CZ', {
+    timeZone: "Europe/Prague",
     day: "numeric",
     month: "numeric",
     year: "numeric",

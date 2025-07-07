@@ -1,6 +1,6 @@
 # Předpověď počasí – React + TypeScript + Vite
 
-Jednoduchá webová aplikace pro vyhledávání měst a zobrazení aktuální předpovědi počasí pomocí OpenWeatherMap API.
+Jednoduchá webová aplikace pro vyhledávání měst, zobrazení aktuální předpovědi počasí a následujících 5 dní pomocí OpenWeatherMap API.
 
 ## Popis aplikace
 
@@ -15,7 +15,7 @@ Klade důraz na:
 - formátování data/času podle jazyka prohlížeče
 - čistý funkcionální přístup bez UI knihoven
 - přehlednou strukturu bez složité konfigurace
-- CSS styly pomocí
+- CSS styly pomocí SASS
 
 ## Spuštění aplikace
 
@@ -43,11 +43,11 @@ npm run dev
 Aplikace byla vyvíjena a testována v prohlížeči Brave (Chromium-based).
 Díky použití moderních webových standardů by měla být plně funkční také v dalších běžně používaných prohlížečích:
 
-✅ Brave (testováno)
-✅ Mozilla Firefox (testováno)
-⚠️ Google Chrome (očekávaná plná kompatibilita)
-⚠️ Microsoft Edge (očekávaná kompatibilita)
-⚠️ Safari (desktop) (očekávaná kompatibilita)
+- ✅ Brave (testováno)
+- ✅ Mozilla Firefox (testováno)
+- ⚠️ Google Chrome (očekávaná plná  kompatibilita)
+- ⚠️ Microsoft Edge (očekávaná kompatibilita)
+- ⚠️ Safari (desktop) (očekávaná kompatibilita)
 
 ## Struktura projektu
 ```bash
@@ -60,7 +60,7 @@ src/
 │       ├── WeatherCard.tsx
 │       └── WeatherCard.scss
 ├── styles/
-│   ├── _variables.scss
+│   ├── variables.scss
 │   ├── main.scss
 ├── services/           # Volání REST API (fetchForecast)
 ├── types/              # TypeScript typy (City, ForecastResponse)

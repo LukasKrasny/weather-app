@@ -1,12 +1,13 @@
-$color-bg: #eef6ff;
+$background-gradient: linear-gradient(120deg, #dce9f9, #6d87c5);
+$background-color: #f0f4ff; 
 $color-white: #ffffff;
-$color-gray: #555;
+$color-gray: #4b4b4b;
 $color-border: #959595;
-$color-primary: #0044cc;
+$color-primary: #4b4b4b;
 $color-accent: #ff9900;
 
 $font-base: 'Segoe UI', sans-serif;
 
 $radius: 8px;
-$shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+$shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
 $spacing: 16px;

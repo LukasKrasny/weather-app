@@ -1,28 +1,86 @@
 @use '@/styles/variables';
 
 .weather-card {
-  background-color: variables.$color-white;
-  border: 1px solid variables.$color-border;
-  border-radius: variables.$radius;
-  padding: variables.$spacing;
-  box-shadow: variables.$shadow;
-  max-width: 320px;
-  margin-bottom: variables.$spacing;
+  background-color: variables.$background-color;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  padding: 24px;
+  max-width: 400px;
+  margin: 32px auto;
+  text-align: center;
+  transition: all 0.3s ease;
+}
 
-  h2 {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-  }
+.weather-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
 
-  .temperature {
-    font-size: 2rem;
-    font-weight: bold;
-    color: variables.$color-primary;
-  }
+h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
 
-  .error {
-    color: red;
-    margin-top: 0.5rem;
-    font-weight: bold;
-  }
+.temperature {
+  font-size: 2rem;
+  font-weight: bold;
+  color: variables.$color-primary;
+}
+
+.error {
+  color: red;
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+.forecast-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  margin-top: 8px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+}
+
+h3 {
+  margin: 0;
+  padding: 0.5rem 0;
+  font-size: 1.5rem;
+  color: variables.$color-primary;
+  text-align: center;
+}
+
+.forecast-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  display: grid;
+  gap: 1rem;
+  background: variables.$background-color;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 12px auto;
+  max-width: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: to-lower-case($string: "");
+  transition: transform 0.2s ease;
+}
+
+.forecast-list:hover {
+  transform: scale(1.02);
+}
+
+.icon-wrapper {
+  background: #d2defb;
+  padding: 6px;
+  margin-top: 4px;
+  border-radius: 12px;
+  display: inline-block;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
